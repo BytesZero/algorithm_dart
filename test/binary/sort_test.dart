@@ -1,5 +1,4 @@
-import 'package:algorithm_dart/src/sort/bubble_sort.dart';
-import 'package:algorithm_dart/src/sort/insertion_sort.dart';
+import 'package:algorithm_dart/src/sort/sort.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -229,10 +228,12 @@ void main() {
       99
     ];
 
+    ///用于生成数据
 //    for (var i = 0; i < 90; ++i) {
 //      int value = Random().nextInt(100);
 //      arr.add(value);
 //    }
+
     test('冒泡排序', () {
       ///打乱顺序
       arr.shuffle();
@@ -247,7 +248,16 @@ void main() {
       arr.shuffle();
       print('insertion arr:${arr.toString()}');
       List<int> result = insertionSort(arr);
-      print('insert sort:${result.toString()}');
+      print('insertion sort:${result.toString()}');
+      expect(result, equals(testResult));
+    });
+
+    test('选择排序', () {
+      ///打乱顺序
+      arr.shuffle();
+      print('selection arr:${arr.toString()}');
+      List<int> result = selectionSort(arr);
+      print('selection sort:${result.toString()}');
       expect(result, equals(testResult));
     });
   });
