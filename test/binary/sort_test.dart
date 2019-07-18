@@ -260,5 +260,17 @@ void main() {
       print('selection sort:${result.toString()}');
       expect(result, equals(testResult));
     });
+
+    test('快速排序', () {
+      ///打乱顺序
+      arr.shuffle();
+      print('quick arr:${arr.toString()}');
+//      print('quick arr:[1, 3, 2, 8, 5, 3, 6]');
+//      List<int> result = quickSort([1, 3, 2, 8, 5, 3, 6]);
+      List<int> result = quickSort(arr);
+      print('quick sort:${result.toString()}');
+//      expect(result, equals([1, 2, 3, 3, 5, 6, 8]));
+      expect(result, equals(testResult));
+    });
   });
 }
