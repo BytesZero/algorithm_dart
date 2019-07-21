@@ -4,3 +4,4 @@ library algorithm_dart;
 ///暴露导出文件
 export 'src/binary/binary_search.dart';
 export 'src/sort/sort.dart';
+export 'src/tree/tree.dart';
