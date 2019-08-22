@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 
 ///二叉树测试
 void main() {
-  group('二叉树创建', () {
+  group('二叉树', () {
     ///创建
     ///    10
     ///  9    20
@@ -47,6 +47,14 @@ void main() {
       rearTraversingTree(treeNode2, result);
       print('后序遍历(左>右>根) result:${result.toString()}');
       expect(result, equals([9, 15, 35, 20, 10]));
+    });
+
+    test('二叉树翻转', () {
+      result.clear();
+      TreeNode reverseNode = reverseTree(treeNode1);
+      preTraversingTree(reverseNode, result);
+      print('二叉树翻转 先序遍历(根>左>右) result:${result.toString()}');
+      expect(result, equals([10, 20, 35, 15, 9]));
     });
   });
 }
